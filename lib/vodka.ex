@@ -1,18 +1,7 @@
 defmodule Vodka do
-  @moduledoc """
-  Documentation for Vodka.
-  """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Vodka.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def main(args) do
+    IO.puts "Hello world"
+    Vodka.Query.send_query()
   end
 end

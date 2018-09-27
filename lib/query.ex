@@ -3,13 +3,18 @@ defmodule Vodka.Query do
   Query management for simple discussion with a chatbot
 """
 
-  def send_query(token) do
-    HTTPoison.start
+  def send_query(token, text, lang) do
     url = "https://dialogflow.googleapis.com/v2/projects/viny-526fe/agent/sessions/42000:detectIntent"
 
     body = %{
-             queryInput: "start"
-           }|> Poison.encode!()
+             queryInput: %{
+               text: %{
+                 text: text,
+                 languageCode: lang
+               }
+             }
+           }
+           |> Poison.encode!
 
     header = [
       {"Authorization", "Bearer #{token.token}"},

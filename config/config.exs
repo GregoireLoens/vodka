@@ -28,3 +28,6 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+config :goth,
+       json: "../../../Documents/viny-526fe-20f87332965e.json" |> File.read!

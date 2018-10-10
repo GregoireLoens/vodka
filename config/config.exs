@@ -29,5 +29,3 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 
-config :goth,
-       json: "../../../Documents/viny-526fe-20f87332965e.json" |> File.read!

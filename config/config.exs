@@ -28,4 +28,5 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
-
+config :goth,
+       json: "config/viny-526fe-618c808d2b34.json" |> File.read!

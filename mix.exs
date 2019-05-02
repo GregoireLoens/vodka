@@ -4,7 +4,7 @@ defmodule Vodka.MixProject do
   def project do
     [
       app: :vodka,
-      version: "0.2.0",
+      version: "0.2.1",
       elixir: "~> 1.6",
       escript: [
         main_module: Vodka
@@ -30,7 +30,8 @@ defmodule Vodka.MixProject do
     [
       {:poison, "~> 3.1"},
       {:httpoison, "~> 1.0"},
-      {:goth, "~> 1.0.1"}
+      {:goth, "~> 1.0.1"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
     ]
@@ -44,7 +45,7 @@ defmodule Vodka.MixProject do
       files: ~w(lib mix.exs README*),
       licenses: ["Apache 2.0"],
       links: %{
-        "Gitlab" => ""
+        "Gitlab" => "https://gitlab.viny.lan/viny/vodka"
       }
     ]
   end

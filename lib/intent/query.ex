@@ -6,7 +6,7 @@ defmodule Vodka.Query do
   alias Vodka.Builder, as: Bd
 
   def send_query(token, text, lang, id) do
-    url = "https://dialogflow.googleapis.com/v2/projects/viny-526fe/agent/sessions/#{id}:detectIntent"
+    url = "https://dialogflow.googleapis.com/v2/projects/neo-marvin-gviixo/agent/sessions/#{id}:detectIntent"
 
     case HTTPoison.request(:post, url, Bd.message(text, lang), Bd.header(token)) do
       {:ok, %HTTPoison.Response{status_code: status, body: body}} when status in 200..299 ->

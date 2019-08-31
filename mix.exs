@@ -4,7 +4,7 @@ defmodule Vodka.MixProject do
   def project do
     [
       app: :vodka,
-      version: "0.2.1",
+      version: "0.2.2",
       elixir: "~> 1.6",
       escript: [
         main_module: Vodka
@@ -45,7 +45,7 @@ defmodule Vodka.MixProject do
       files: ~w(lib mix.exs README*),
       licenses: ["Apache 2.0"],
       links: %{
-        "Gitlab" => "https://gitlab.viny.lan/viny/vodka"
+        "Gitlab" => "https://gitlab.com/bhelper/vodka"
       }
     ]
   end

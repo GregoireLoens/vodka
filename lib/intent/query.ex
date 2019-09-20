@@ -3,20 +3,9 @@ defmodule Vodka.Query do
   Query management for simple discussion with a chatbot
 """
 
-  alias Vodka.Builder, as: Bd
 
-  def send_query(token, text, lang, id) do
-    url = "https://dialogflow.googleapis.com/v2/projects/neo-marvin-gviixo/agent/sessions/#{id}:detectIntent"
-
-    case HTTPoison.request(:post, url, Bd.message(text, lang), Bd.header(token)) do
-      {:ok, %HTTPoison.Response{status_code: status, body: body}} when status in 200..299 ->
-        {:ok, Poison.decode!(body)}
-      {:ok, %HTTPoison.Response{status_code: status, body: body}} when status in 400..499 ->
-        {:error, Poison.decode!(body)}
-      {:ok, %HTTPoison.Response{status_code: status, body: body}} when status >= 500 ->
-        {:error, Poison.decode!(body)}
-      {:error, %HTTPoison.Error{reason: reason}} ->
-        {:error, Poison.decode!(reason)}
-    end
+  def send_query(project, token, text, lang, id) do
+    url = "https://dialogflow.googleapis.com/v2/projects/#{project}/agent/sessions/#{id}:detectIntent"
+    Request.send_request(url, token, text, lang, :post)
   end
 end

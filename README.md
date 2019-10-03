@@ -1,6 +1,6 @@
 # Vodka
 
-**TODO: Add description**
+Vodka is an SDK that abstract Dialogflow google API 
 
 ## Installation
 
